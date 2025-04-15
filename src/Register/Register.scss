@@ -1,0 +1,45 @@
+.register-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .register-container h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .register-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .register-container input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .register-container input:focus {
+    border-color: #007bff; /* Blue border on focus */
+  }
+  
+  .register-container button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .register-container button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
