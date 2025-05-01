@@ -1,45 +1,99 @@
-.register-container {
+@import "../Mixins/Mixins.scss";
+
+.reg_heading{
+    font-size: 25px;
     text-align: center;
-    margin-top: 50px;
-    font-family: Arial, sans-serif;
-    width: 300px;
-    margin: 0 auto;
-  }
-  
-  .register-container h2 {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .register-container form {
+    margin-top: 40px;
+}
+
+.Register_main{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 15px;
-  }
-  
-  .register-container input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    outline: none;
-  }
-  
-  .register-container input:focus {
-    border-color: #007bff; /* Blue border on focus */
-  }
-  
-  .register-container button {
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .register-container button:hover {
-    background-color: #218838; /* Darker green on hover */
-  }
-  
+    height: 85vh;
+
+    
+.pass{
+    position: relative;
+
+    span{
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        z-index: 99;
+        cursor: pointer;
+
+        svg{
+            font-size: 20px;
+            color: rgb(87, 87, 87);
+            
+        }
+    }
+}
+
+    .backto_login{
+        position: absolute;
+        left: 2%;
+        top: 20%;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0 20px;
+
+    }
+    
+
+.Register_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+
+
+
+   
+
+    input{
+        width: 220px;
+        padding: 15px 10px;
+
+        @include md{
+            width: 350px;
+        }
+    }
+    .reg_fp{
+        align-self: flex-start;
+        cursor: pointer;
+        border-bottom: 1px solid black;
+        &:hover{
+            font-weight: 800;
+            transition: 0.1s;
+            
+        }
+    }
+
+    .reg_btn{
+        border: none;
+        background-color: rgb(28, 28, 28);
+        color: white;
+        width: 200px;
+        height: 50px;
+        &:hover{
+            background-color: black;
+            transition: 0.6s;
+        }
+    }
+
+    .reg_ca{
+        border-bottom: 1px solid black;
+        cursor: pointer;
+        &:hover{
+            font-weight: 800;
+            transition: 0.1s;
+            
+        }
+    }
+}
+
+}

@@ -1,0 +1,174 @@
+.sell-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 10px; /* To avoid issues on small screens */
+}
+
+.sell-container {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 540px;
+  width: 100%; /* Ensure full width in small screens */
+  border: 2px solid #d4af37; /* Gold border */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.sell-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.sell-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sell-form input,
+.sell-form textarea,
+.sell-form select {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+.sell-form input:focus,
+.sell-form textarea:focus,
+.sell-form select:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.sell-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.sell-form input[type="file"] {
+  padding: 0.5rem 0;
+  border: none;
+}
+
+.sell-form button {
+  padding: 0.9rem;
+  margin-top: 1.2rem;
+  background-color: #021224; /* Your header/navy color */
+  color: #ffffff;
+  border: 1px solid #d4af37; /* Thin gold border */
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(2, 18, 36, 0.25);
+}
+
+.sell-form button:hover {
+  background-color: #d4af37;
+  color: #021224;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0.75rem;
+}
+
+/* Responsive Design for Different Screen Sizes */
+
+/* Tablet (Screen Width ≤ 768px) */
+@media (max-width: 768px) {
+  .sell-container {
+    padding: 1.8rem;
+    max-width: 90%;
+  }
+
+  .sell-form input,
+  .sell-form textarea,
+  .sell-form select {
+    font-size: 1rem;
+  }
+
+  .sell-form button {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (Screen Width ≤ 600px) */
+@media (max-width: 600px) {
+  .sell-container {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .sell-form input,
+  .sell-form textarea,
+  .sell-form select {
+    font-size: 0.95rem;
+  }
+
+  .sell-form button {
+    font-size: 0.95rem;
+  }
+
+  .sell-form label {
+    font-size: 0.9rem;
+  }
+
+  .sell-form input,
+  .sell-form textarea {
+    padding: 0.75rem;
+  }
+}
+
+/* Extra Small Screens (Mobile Landscape, ≤ 480px) */
+@media (max-width: 480px) {
+  .sell-container {
+    padding: 1.2rem;
+    max-width: 95%;
+  }
+
+  .sell-form input,
+  .sell-form textarea,
+  .sell-form select {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .sell-form button {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .sell-form label {
+    font-size: 0.85rem;
+  }
+}
+
+/* Snackbar Styles */
+.MuiSnackbar-root {
+  font-size: 1rem;
+  background-color: #021224; /* Snackbar background */
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.MuiSnackbarContent-root {
+  background-color: #021224;
+  color: white;
+}

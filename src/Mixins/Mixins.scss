@@ -1,0 +1,292 @@
+@mixin btn($pad,$fs){
+   
+       
+    background:#000000;
+    color: rgb(255, 255, 255);
+    border-radius: 0.625em;
+    font-size: $fs;
+    padding: $pad;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    outline: 0;
+    border: 0;
+    border-bottom: 3px solid #000000;
+    flex-grow: 1;
+
+
+ 
+   
+   &:hover {
+    color: rgb(255, 255, 255);
+    border-bottom: 3px solid #000000;
+   }
+   
+   &:after {
+    content: "";
+    background: rgb(0, 0, 0);
+   
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+   }
+   
+   &:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.6s;
+   }
+
+}
+
+@mixin mbtn($pad,$brad){
+  
+    background: black;
+   
+    color: rgb(255, 255, 255);
+    border: 0.5px solid rgba(0, 0, 0, 0.285);
+    border-radius: $brad;
+    font-size: 16px;
+    padding: $pad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+
+
+
+
+}
+@mixin min800 {
+    @media only screen and (min-width: 800px) {
+        @content;
+    }
+    }
+    @mixin m800 {
+        @media only screen and (max-width: 800px) {
+            @content;
+        }
+        }
+
+@mixin cardmd {
+    @media only screen and (max-width: 540px) {
+        @content;
+    }
+    }
+
+@mixin mybtn{
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    padding: 7px;
+    border: 1px solid black;
+    @include min800{
+
+        &:hover {
+            background-color: white;
+            border: 1px solid black;
+            border-collapse: collapse;
+            color: black;
+            cursor: pointer;
+            transition: all .4s;
+        }
+    }
+
+    @include cardmd{
+        font-size: 14px;
+    }
+}
+
+
+
+
+@mixin f2 {
+    @media (max-width: 480px) { // Mobile screens
+      @content;
+    }
+  }
+  
+@mixin mv {
+    @media only screen and (max-width: 768px) {
+        @content;
+    }
+    }
+    
+    @mixin mvm {
+    @media only screen and (max-width: 1030px) {
+        @content;
+    }
+    }
+
+    @mixin ss {
+        @media only screen and (max-width: 640px) {
+            @content;
+        }
+        }
+        
+
+// only for logo
+
+
+@mixin vvsm{
+    @media only screen and (max-width:230px){
+        @content
+    }
+}; 
+
+@mixin vvvsm{
+    @media only screen and (max-width:200px){
+        @content
+    }
+};
+
+@mixin spm{
+    @media only screen and (max-width:1150px){
+        @content
+    }
+};
+
+
+// logo mediaa query end here 
+
+
+@mixin sm{
+    @media only screen and (max-width:950px){
+        @content
+    }
+};
+
+@mixin mm{
+    @media only screen and (min-width:400px){
+        @content
+    }
+};
+
+@mixin sb{
+    @media only screen and (max-width:450px){
+        @content
+    }
+};
+
+
+
+@mixin md{
+    @media only screen and (min-width:786px){
+        @content
+    }
+};
+@mixin mmm{
+    @media only screen and (max-width:786px){
+        @content
+    }
+};
+
+@mixin mdd{
+    @media only screen and (max-width:400px){
+        @content
+    }
+};
+
+@mixin sp{
+    @media only screen and (max-width:800px){
+        @content
+    }
+};
+
+// For insta
+
+@mixin ig{
+    @media only screen and (max-width:786px){
+        @content
+    }
+};
+
+@mixin ig1{
+    @media only screen and (max-width:600px){
+        @content
+    }
+};
+
+@mixin ig2{
+    @media only screen and (max-width:500px){
+        @content
+    }
+};
+@mixin ig3{
+    @media only screen and (max-width:400px){
+        @content
+    }
+};
+@mixin ig4{
+    @media only screen and (max-width:350px){
+        @content
+    }
+};
+@mixin ig5{
+    @media only screen and (max-width:330px){
+        @content
+    }
+};
+// Mixins
+
+@mixin product {
+    @media only screen and (min-width: 1450px) {
+        @content;
+    }
+}
+
+@mixin productlap {
+    @media only screen and (max-width: 1150px) {
+        @content;
+    }
+}
+
+// Mixins
+
+
+// for footer 
+
+@mixin f1{
+    @media only screen and (max-width:350px){
+        @content
+    }
+};
+
+@mixin line{
+ 
+        cursor: pointer;
+        position: relative;
+      display: inline-block;
+    
+      &::after {
+        content: "";
+        position: absolute;
+        top: 23px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #999999;
+        transition: width 0.3s ease-in-out;
+        }
+          
+      &:hover::after {
+        width: 100%;
+        }
+      
+    
+}

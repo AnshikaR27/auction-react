@@ -1,0 +1,457 @@
+$list-glow: #d4af37;
+$list-glow-light: rgba(212, 175, 55, 0.3);
+
+.listings-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3.5rem;
+  background: #eaf0ff;
+  margin: 8;
+}
+
+.no-listings-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.listing-wrapper {
+  position: relative;
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  overflow: visible;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  }
+
+  .hover-trigger {
+    position: relative;
+
+    .image-wrapper {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+
+      .listing-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        display: block;
+      }
+    }
+
+    .multi-button {
+      --background: #ffffff;
+      --text: #222;
+
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 10;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.25s ease;
+
+      button {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: none;
+        border-radius: 50%;
+        background: var(--background);
+        color: var(--text);
+        transform: translate(-50%, -50%) scale(0);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        box-shadow: 0 0 0rem -0.25rem var(--background);
+        opacity: 0;
+        pointer-events: none;
+        font-size: 1.1rem;
+
+        &:hover {
+          background: var(--text);
+          color: var(--background);
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        &:nth-child(1) {
+          top: 15.625%;
+          left: 50%;
+        }
+
+        &:nth-child(2) {
+          top: 25%;
+          left: 25%;
+        }
+
+        &:nth-child(3) {
+          top: 50%;
+          left: 15.625%;
+        }
+      }
+    }
+
+    .image-wrapper:hover + .multi-button,
+    .multi-button:hover,
+    .multi-button:focus-within {
+      width: 9rem;
+      height: 9rem;
+      opacity: 1;
+      pointer-events: auto;
+
+      button {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  .listing-card {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .listing-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .listing-description {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    .listing-price {
+      font-weight: 700;
+      color: $list-glow;
+      font-size: 1.05rem;
+      margin-top: auto;
+    }
+  }
+}
+
+$comment-bg: rgba(255, 244, 236, 0.55); // Soft peach glass
+$comment-glow: #f4a261;                 // Warm peach-gold
+$comment-glow-light: rgba(244, 162, 97, 0.3);
+$comment-text: #3b2f2f;
+$comment-blur: blur(14px);
+
+.comments-list {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .comment-item {
+    background: $comment-bg;
+    backdrop-filter: $comment-blur;
+    border-left: 4px solid $comment-glow;
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 4px 12px $comment-glow-light;
+    transition: all 0.3s ease;
+    color: $comment-text;
+
+    &:hover {
+      background: rgba(255, 244, 236, 0.65);
+      transform: translateY(-2px);
+    }
+
+    .comment-header {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .comment-text {
+      font-size: 1rem;
+      color: #4e3a3a;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+.comment-name {
+  font-weight: bold;
+  color: #d68e3c; // a rich warm amber
+}
+
+.comment-text {
+  font-style: italic;
+}
+
+.comment-input {
+  width: 100%;
+  height: 2.2rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  resize: vertical; // user can expand manually if needed
+  transition: box-shadow 0.3s ease;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.comment-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+
+  button {
+    background: transparent;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.comment-feedback {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  transition: opacity 0.3s ease;
+
+  &.success {
+    color: #28a745;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  &.error {
+    color: #dc3545;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.no-comments {
+  color: #8c6b5d;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6); // darker overlay for contrast
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal,
+.modal_comment {
+  background: rgba(255, 255, 255, 0.15); // semi-transparent white
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal_comment h2,
+.modal h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.comments-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.comment-item {
+  background: rgba(255, 239, 229, 0.45); // light peach glass
+  backdrop-filter: blur(12px);
+  border-left: 5px solid $comment-glow;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px $comment-glow-light;
+  color: #3b2f2f;
+  transition: transform 0.3s ease, background 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 239, 229, 0.55);
+  }
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #333;
+}
+
+/// Grey glass backdrop
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45); // dark glassy tint
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+// Bid modal box
+.modal_bid {
+  background: rgba(255, 255, 255, 0.08); // light frosted layer
+  border-radius: 18px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 30px 24px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  position: relative;
+
+  .close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #ddd;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 20px;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid #f4a261;
+    }
+  }
+
+  button {
+    width: 100%;
+    background-color: #f4a261;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #e5985b;
+    }
+  }
+
+  .bid-message {
+    margin-top: 12px;
+    color: #f4a261;
+    font-size: 1rem;
+    text-align: center;
+  }
+}

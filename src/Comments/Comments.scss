@@ -1,0 +1,162 @@
+// /* Comments.scss */
+
+// .comments-page {
+//   padding: 1rem;
+
+//   .leave-comment-btn {
+//     background-color: #d4af37;
+//     color: #021224;
+//     border: none;
+//     padding: 6px 12px;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     font-weight: 500;
+//     font-size: 0.9rem;
+//     transition: all 0.3s ease;
+
+//     &:hover {
+//       background-color: darken(#d4af37, 10%);
+//     }
+//   }
+// }
+
+// .modal-overlay {
+//   position: fixed;
+//   inset: 0;
+//   background-color: rgba(0, 0, 0, 0.5);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 1000;
+// }
+
+// .modal {
+//   background-color: rgba(10, 42, 94, 0.95);
+//   backdrop-filter: blur(5px);
+//   width: 90%;
+//   max-width: 480px; // slightly thinner
+//   border-radius: 6px;
+//   border: 1px solid #d4af37;
+//   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+//   overflow: hidden;
+//   position: relative;
+//   animation: modalFadeIn 0.3s ease-in-out;
+
+//   @keyframes modalFadeIn {
+//     from {
+//       opacity: 0;
+//       transform: translateY(-20px);
+//     }
+//     to {
+//       opacity: 1;
+//       transform: translateY(0);
+//     }
+//   }
+
+//   h2 {
+//     font-size: 1.2rem;
+//     padding: 14px 16px;
+//     margin: 0;
+//     color: white;
+//     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+//   }
+
+//   .close {
+//     position: absolute;
+//     top: 12px;
+//     right: 16px;
+//     color: white;
+//     font-size: 1.5rem;
+//     cursor: pointer;
+
+//     &:hover {
+//       color: #d4af37;
+//     }
+//   }
+
+//   textarea {
+//     width: 100%;
+//     padding: 10px 14px;
+//     margin: 0 16px 14px;
+//     border: 1px solid rgba(255, 255, 255, 0.2);
+//     border-radius: 6px;
+//     background-color: rgba(255, 255, 255, 0.05);
+//     color: white;
+//     font-size: 0.9rem;
+//     resize: vertical;
+//     font-family: inherit;
+
+//     &::placeholder {
+//       color: #ccc;
+//     }
+//   }
+
+//   .comments-list {
+//     max-height: 260px;
+//     overflow-y: auto;
+//     padding: 8px 16px;
+
+//     &::-webkit-scrollbar {
+//       width: 6px;
+//     }
+
+//     &::-webkit-scrollbar-thumb {
+//       background: rgba(212, 175, 55, 0.6);
+//       border-radius: 3px;
+//     }
+
+//     &::-webkit-scrollbar-thumb:hover {
+//       background: rgba(212, 175, 55, 0.8);
+//     }
+//   }
+
+//   .comment-item {
+//     padding: 8px 0;
+//     border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+
+//     .comment-username {
+//       font-weight: 600;
+//       color: #d4af37;
+//       font-size: 0.88rem;
+//     }
+
+//     .comment-text {
+//       color: #ccc;
+//       font-size: 0.85rem;
+//       margin-top: 3px;
+//     }
+//   }
+
+//   .success,
+//   .error {
+//     font-size: 0.85rem;
+//     margin: 0 16px 10px;
+//     text-align: center;
+//   }
+
+//   .success {
+//     color: #a3e635;
+//   }
+
+//   .error {
+//     color: #ff6b6b;
+//   }
+
+//   .submit-btn {
+//     display: block;
+//     background-color: rgba(212, 175, 55, 0.2);
+//     border: 1px solid #d4af37;
+//     border-radius: 4px;
+//     padding: 8px 20px;
+//     margin: 0 auto 16px;
+//     font-size: 0.88rem;
+//     color: white;
+//     cursor: pointer;
+//     transition: all 0.2s ease;
+
+//     &:hover {
+//       background-color: #d4af37;
+//       color: #021224;
+//     }
+//   }
+// }

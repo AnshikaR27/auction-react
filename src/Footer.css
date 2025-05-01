@@ -1,16 +1,17 @@
 .footer-container {
-    background-color: #0d0d0d; /* softer, modern dark */
-    color: #ccc;
-    padding: 20px;
-    font-size: 0.9rem;
-    margin-top: auto;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px; /* spacing between text and links */
-    flex-wrap: wrap; /* fallback for smaller screens */
-  }
+  background-color: #021224; /* matches header */
+  color: #ccc;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
   
   .footer-text {
     margin: 0;
